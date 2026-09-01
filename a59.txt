@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Race Morning — What To Actually Wear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f2e6;
+    --paper2:#efe8d6;
+    --ink:#1a1917;
+    --ink-soft:#4a463d;
+    --line: rgba(26,25,23,0.16);
+    --bib:#c8331f;
+    --bib-dark:#9c2716;
+    --check:#2f5d4c;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Libre Franklin', sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  .display{
+    font-family:'Archivo', sans-serif;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:-0.01em;
+    line-height:0.94;
+  }
+  .wrap{ max-width:1140px; margin:0 auto; padding:0 32px; }
+
+  /* dashed perforation divider — like a tear-off race number */
+  .perf{
+    width:100%; height:1px;
+    background-image: linear-gradient(90deg, var(--ink) 50%, transparent 50%);
+    background-size: 14px 1px;
+    opacity:0.35;
+  }
+
+  /* ---------- nav ---------- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,242,230,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 32px; max-width:1140px; margin:0 auto;
+  }
+  .nav .mark{
+    font-family:'Archivo', sans-serif; font-weight:900; font-size:19px;
+    text-transform:uppercase; letter-spacing:0.01em;
+    display:flex; align-items:center; gap:10px;
+  }
+  .nav .mark .bibnum{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:30px; height:30px; border:2px solid var(--ink);
+    border-radius:50%; font-size:13px; color:var(--bib); font-weight:900;
+  }
+  .nav ul{ list-style:none; display:flex; gap:30px; margin:0; padding:0; font-size:13.5px; }
+  .nav ul a{ text-decoration:none; color:var(--ink-soft); }
+  .nav ul a:hover{ color:var(--bib); }
+  @media (max-width:820px){ .nav ul{ display:none; } }
+
+  /* ---------- hero ---------- */
+  .hero{
+    display:grid; grid-template-columns:1.05fr 0.95fr;
+    align-items:stretch;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-copy{
+    padding:88px 56px 70px 32px;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  .bib-tag{
+    display:inline-flex; align-items:center; gap:10px;
+    border:2px dashed var(--bib);
+    color:var(--bib);
+    padding:7px 14px;
+    font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase;
+    font-weight:600;
+    width:fit-content; margin-bottom:26px;
+  }
+  .hero h1{
+    font-size:clamp(42px, 5.6vw, 78px);
+    margin:0; max-width:11ch;
+  }
+  .hero h1 .accent{ color:var(--bib); }
+  .hero-copy p.sub{
+    max-width:46ch; font-size:17px; color:var(--ink-soft); margin-top:24px;
+  }
+  .hero-stats{
+    display:flex; gap:0; margin-top:44px;
+    border-top:1px solid var(--line);
+  }
+  .hero-stats div{
+    flex:1; padding:18px 18px 0 0; border-right:1px solid var(--line);
+  }
+  .hero-stats div:last-child{ border-right:none; }
+  .hero-stats .n{ font-family:'Archivo', sans-serif; font-weight:900; font-size:30px; color:var(--bib); }
+  .hero-stats .l{ font-size:12px; color:var(--ink-soft); margin-top:4px; }
+
+  .hero-media{ position:relative; overflow:hidden; }
+  .hero-media img{ width:100%; height:100%; object-fit:cover; min-height:480px; }
+  .hero-media .stamp{
+    position:absolute; top:26px; right:26px;
+    width:96px; height:96px; border-radius:50%;
+    border:2px solid rgba(247,242,230,0.9);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center; font-family:'Archivo', sans-serif; font-weight:900;
+    font-size:11px; color:#f7f2e6; letter-spacing:0.04em;
+    transform:rotate(8deg);
+    line-height:1.3;
+  }
+  @media (max-width:900px){
+    .hero{ grid-template-columns:1fr; }
+    .hero-copy{ padding:56px 24px 40px; order:2; }
+    .hero-media{ order:1; } .hero-media img{ min-height:340px; }
+  }
+
+  section{ padding:96px 0; }
+  section.tight{ padding:76px 0; }
+  .eyebrow{
+    font-size:12.5px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--bib); margin:0 0 16px; font-weight:600;
+  }
+  h2.head{ font-size:clamp(30px, 3.8vw, 48px); margin:0 0 10px; max-width:16ch; }
+  .lede{ max-width:600px; color:var(--ink-soft); font-size:16.5px; margin-top:16px; }
+
+  /* ---------- three-outfit rule ---------- */
+  .rule-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:2px;
+    background:var(--ink); margin-top:52px;
+  }
+  .rule-card{ background:var(--paper); padding:32px 26px 36px; }
+  .rule-card .num{
+    font-family:'Archivo', sans-serif; font-weight:900; font-size:15px; color:var(--bib);
+  }
+  .rule-card h3{
+    font-family:'Archivo', sans-serif; text-transform:uppercase; font-weight:900;
+    font-size:23px; margin:12px 0 10px;
+  }
+  .rule-card p{ font-size:14.5px; color:var(--ink-soft); margin:0; }
+  @media (max-width:820px){ .rule-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- timeline ---------- */
+  .timeline{ margin-top:56px; position:relative; }
+  .timeline::before{
+    content:""; position:absolute; left:64px; top:8px; bottom:8px; width:1px;
+    background-image: linear-gradient(180deg, var(--ink) 60%, transparent 40%);
+    background-size: 1px 12px;
+    opacity:0.3;
+  }
+  @media (max-width:640px){ .timeline::before{ left:30px; } }
+  .tl-item{
+    display:grid; grid-template-columns:64px 1fr; gap:28px;
+    padding:26px 0; position:relative;
+  }
+  @media (max-width:640px){ .tl-item{ grid-template-columns:30px 1fr; gap:16px; } }
+  .tl-item .time{
+    font-family:'Archivo', sans-serif; font-weight:900; font-size:13px;
+    color:var(--paper); background:var(--bib);
+    width:44px; height:44px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center; line-height:1.1; z-index:2; position:relative;
+  }
+  @media (max-width:640px){ .tl-item .time{ width:30px; height:30px; font-size:9px; } }
+  .tl-item h4{
+    font-family:'Archivo', sans-serif; text-transform:uppercase; font-weight:700;
+    font-size:18px; margin:2px 0 8px;
+  }
+  .tl-item p{ margin:0; color:var(--ink-soft); font-size:14.5px; max-width:60ch; }
+
+  /* ---------- image + text feature rows ---------- */
+  .feat-row{
+    display:grid; grid-template-columns:0.9fr 1.1fr; gap:0;
+    border:1px solid var(--line); margin-top:56px;
+  }
+  .feat-row .media{ position:relative; }
+  .feat-row .media img{ width:100%; height:100%; object-fit:cover; min-height:380px; }
+  .feat-row .copy{ padding:44px 44px; display:flex; flex-direction:column; justify-content:center; }
+  .feat-row .copy h3{
+    font-family:'Archivo', sans-serif; text-transform:uppercase; font-weight:900;
+    font-size:clamp(24px, 2.6vw, 32px); margin:0 0 16px; max-width:14ch;
+  }
+  .feat-row .copy p{ color:var(--ink-soft); font-size:15.5px; max-width:48ch; }
+  .feat-row .copy .pin-list{ list-style:none; padding:0; margin:20px 0 0; }
+  .feat-row .copy .pin-list li{
+    font-size:14px; padding:8px 0; border-top:1px solid var(--line);
+    display:flex; gap:10px;
+  }
+  .feat-row .copy .pin-list li::before{ content:"—"; color:var(--bib); font-weight:700; }
+  @media (max-width:860px){
+    .feat-row{ grid-template-columns:1fr; }
+    .feat-row .media img{ min-height:280px; }
+    .feat-row .copy{ padding:32px 26px; }
+  }
+
+  /* ---------- weather table ---------- */
+  .wx-table{
+    margin-top:52px; border-top:2px solid var(--ink); width:100%; border-collapse:collapse;
+  }
+  .wx-table th{
+    text-align:left; font-family:'Archivo', sans-serif; text-transform:uppercase;
+    font-size:12px; letter-spacing:0.06em; color:var(--ink-soft);
+    padding:14px 16px; border-bottom:1px solid var(--line);
+  }
+  .wx-table td{
+    padding:16px; border-bottom:1px solid var(--line); font-size:14.5px; vertical-align:top;
+  }
+  .wx-table td:first-child{
+    font-family:'Archivo', sans-serif; font-weight:900; color:var(--bib); font-size:16px; white-space:nowrap;
+  }
+  .wx-table tr:hover td{ background:var(--paper2); }
+  @media (max-width:700px){
+    .wx-table thead{ display:none; }
+    .wx-table, .wx-table tbody, .wx-table tr, .wx-table td{ display:block; width:100%; }
+    .wx-table tr{ padding:16px 0; border-bottom:1px solid var(--line); }
+    .wx-table td{ border-bottom:none; padding:4px 0; }
+    .wx-table td:first-child{ font-size:18px; }
+  }
+
+  /* ---------- mistakes ---------- */
+  .mistake-row{
+    display:grid; grid-template-columns:1fr 1fr; gap:0;
+    margin-top:56px; border:1px solid var(--line);
+  }
+  .mistake-col{ padding:38px 40px; }
+  .mistake-col.dont{ background:var(--paper2); border-right:1px solid var(--line); }
+  .mistake-col h4{
+    font-family:'Archivo', sans-serif; text-transform:uppercase; font-weight:900; font-size:16px;
+    margin:0 0 20px; display:flex; align-items:center; gap:10px;
+  }
+  .mistake-col.dont h4{ color:var(--bib); }
+  .mistake-col.do h4{ color:var(--check); }
+  .mistake-col ul{ list-style:none; margin:0; padding:0; }
+  .mistake-col li{
+    font-size:14.5px; color:var(--ink-soft); padding:11px 0; border-top:1px solid var(--line);
+  }
+  .mistake-col li:first-of-type{ border-top:none; }
+  @media (max-width:760px){ .mistake-row{ grid-template-columns:1fr; } .mistake-col.dont{ border-right:none; border-bottom:1px solid var(--line); } }
+
+  /* ---------- checklist ---------- */
+  .checklist{
+    margin-top:52px; display:grid; grid-template-columns:1fr 1fr; gap:0 60px;
+  }
+  .chk{
+    display:flex; align-items:flex-start; gap:14px;
+    padding:14px 0; border-top:1px solid var(--line);
+  }
+  .chk .box{
+    width:19px; height:19px; border:2px solid var(--ink); flex-shrink:0; margin-top:2px;
+  }
+  .chk p{ margin:0; font-size:15px; }
+  .chk span{ display:block; font-size:12.5px; color:var(--ink-soft); margin-top:2px; }
+  @media (max-width:700px){ .checklist{ grid-template-columns:1fr; } }
+
+  /* ---------- CTA (share/save, not newsletter — deliberately different from page 1) ---------- */
+  .cta{
+    background:var(--ink); color:var(--paper);
+    border-top:1px solid var(--line);
+  }
+  .cta-inner{ display:flex; justify-content:space-between; align-items:center; gap:40px; flex-wrap:wrap; }
+  .cta h2{ margin:0 0 10px; color:var(--paper); }
+  .cta p{ color:#c9c4b6; max-width:44ch; margin:0; font-size:15.5px; }
+  .cta .btns{ display:flex; gap:14px; flex-wrap:wrap; }
+  .cta button{
+    font-family:'Archivo', sans-serif; text-transform:uppercase; font-weight:700;
+    font-size:13.5px; letter-spacing:0.04em;
+    padding:14px 22px; border:2px solid var(--paper); background:none; color:var(--paper);
+    cursor:pointer;
+  }
+  .cta button.solid{ background:var(--bib); border-color:var(--bib); color:var(--paper); }
+
+  /* ---------- footer ---------- */
+  footer{ padding:50px 0 36px; }
+  .foot-row{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px;
+    padding-top:30px; font-size:13px; color:var(--ink-soft);
+    border-top:1px solid var(--line);
+  }
+  .foot-mark{ font-family:'Archivo', sans-serif; font-weight:900; text-transform:uppercase; font-size:15px; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <div class="mark"><span class="bibnum">RD</span>RACE MORNING</div>
+    <ul>
+      <li><a href="#rule">Three-Outfit Rule</a></li>
+      <li><a href="#timeline">Race Morning</a></li>
+      <li><a href="#weather">Weather Chart</a></li>
+      <li><a href="#mistakes">Mistakes</a></li>
+      <li><a href="#checklist">Bag Checklist</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" style="padding:0;">
+  <div class="hero-copy">
+    <div class="bib-tag">FIRST-TIMER'S GUIDE</div>
+    <h1 class="display">What to<br>wear on<br><span class="accent">race morning.</span></h1>
+    <p class="sub">Race-day dressing isn't the same problem as everyday running kit. There's a start-line wait, a temperature swing, a bag drop, and a finish-line crash — and your outfit has to survive all four. Here's how to plan it properly.</p>
+    <div class="hero-stats">
+      <div><div class="n">3</div><div class="l">outfits, not one</div></div>
+      <div><div class="n">20°</div><div class="l">typical start-to-finish swing</div></div>
+      <div><div class="n">6</div><div class="l">checklist items people forget</div></div>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="https://images.unsplash.com/photo-1766970096331-78c8af007a3b?w=1400&auto=format&fit=crop&q=80" alt="A runner celebrating while crossing a marathon finish line">
+    <div class="stamp">FINISHER<br>NOT A<br>FASHION<br>SHOW</div>
+  </div>
+</section>
+
+<div class="perf"></div>
+
+<section id="rule">
+  <div class="wrap">
+    <p class="eyebrow">THE CORE IDEA</p>
+    <h2 class="display head">You need three outfits, not one</h2>
+    <p class="lede">Most first-time racers plan for the run and forget the two hours around it. Split race morning into three separate outfit problems and each one gets much easier to solve.</p>
+
+    <div class="rule-grid">
+      <div class="rule-card">
+        <div class="num display">№1</div>
+        <h3 class="display">The throwaway layer</h3>
+        <p>An old hoodie or bin bag worn at the start corral, ditched right before the gun. Keeps you warm without warming up your actual race kit.</p>
+      </div>
+      <div class="rule-card">
+        <div class="num display">№2</div>
+        <h3 class="display">The race outfit</h3>
+        <p>Only what you'll wear for the next few hours of moving. Lighter than feels sensible while standing still — you'll warm up fast once you're going.</p>
+      </div>
+      <div class="rule-card">
+        <div class="num display">№3</div>
+        <h3 class="display">The change bag</h3>
+        <p>Dry clothes waiting at the finish. Wet, salt-stiff race kit gets uncomfortable fast the moment you stop moving and cool down.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline" class="paper2" style="background:var(--paper2);">
+  <div class="wrap">
+    <p class="eyebrow">HOUR BY HOUR</p>
+    <h2 class="display head">A typical race morning, layer by layer</h2>
+    <p class="lede">Times shift depending on your race, but the sequence of what comes off and when stays roughly the same.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="time">−2h</div>
+        <div><h4 class="display">Wake &amp; travel</h4><p>Wear the throwaway layer over your race outfit. It's easier to dress once at home than to change at a crowded venue.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="time">−45m</div>
+        <div><h4 class="display">Bag drop</h4><p>Hand off your change bag before you queue for the start corral — bag trucks usually close well before the gun.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="time">−15m</div>
+        <div><h4 class="display">Corral wait</h4><p>Standing still in the cold is the coldest part of your whole morning. Keep the throwaway layer on until the last possible minute.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="time">0</div>
+        <div><h4 class="display">Gun time</h4><p>Drop the throwaway layer to the side — most races collect and donate them. You're now in race kit only.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="time">+2–4h</div>
+        <div><h4 class="display">On the course</h4><p>Sun, wind, and effort all change how warm your kit feels versus how it felt standing at the start line.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="time">Finish</div>
+        <div><h4 class="display">The crash</h4><p>Body temperature drops fast once you stop. Dry layers from your change bag go on within minutes, not after the medal photos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="perf"></div>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">SPECIFICS</p>
+    <h2 class="display head">Two details worth getting right</h2>
+    <p class="lede">Small choices that separate a comfortable race from a distracting one.</p>
+  </div>
+  <div class="wrap">
+    <div class="feat-row">
+      <div class="media">
+        <img src="https://images.unsplash.com/photo-1502904550040-7534597429ae?w=900&auto=format&fit=crop&q=80" alt="A group of runners together on a stadium track before a race">
+      </div>
+      <div class="copy">
+        <p class="eyebrow">BIB PLACEMENT</p>
+        <h3 class="display">Pin it flat, pin it early</h3>
+        <p>A bib pinned the night before saves fumbling in a crowded corral. Pin through all four corners so it doesn't flap, fold, or block the timing strip on the back.</p>
+        <ul class="pin-list">
+          <li>Pin over your race outfit, not the throwaway layer</li>
+          <li>Keep it flat — a folded bib can miss timing mats</li>
+          <li>Skip pinning it to a jacket you plan to remove</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat-row" style="margin-top:24px;">
+      <div class="media" style="order:2;">
+        <img src="https://images.unsplash.com/photo-1632650312771-52c324fb4d83?w=900&auto=format&fit=crop&q=80" alt="An inflatable finish line arch at a race">
+      </div>
+      <div class="copy" style="order:1;">
+        <p class="eyebrow">CARRYING ESSENTIALS</p>
+        <h3 class="display">Pockets over pouches</h3>
+        <p>A running belt or built-in pockets beat carrying anything by hand for hours. Keep gels, a phone, and cash for after — a bulky waist pouch tends to bounce and chafe by the halfway mark.</p>
+        <ul class="pin-list">
+          <li>Test any belt or pack on a training run first</li>
+          <li>Keep pockets accessible without stopping</li>
+          <li>Store finish-line ID or cash somewhere waterproof</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="weather" style="background:var(--paper2);">
+  <div class="wrap">
+    <p class="eyebrow">QUICK REFERENCE</p>
+    <h2 class="display head">What to wear, by start-line temperature</h2>
+    <p class="lede">A starting point for the morning of, adjusted for how your body actually runs warm or cold.</p>
+
+    <table class="wx-table">
+      <thead>
+        <tr><th>Start temp</th><th>Race outfit</th><th>Throwaway layer</th><th>Extras</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Above 22°</td>
+          <td>Singlet or light tee, shorts, cap</td>
+          <td>Skip it — you won't need it</td>
+          <td>Electrolytes, sunscreen</td>
+        </tr>
+        <tr>
+          <td>15–22°</td>
+          <td>Short sleeve tee, shorts</td>
+          <td>Light old top, worn to the corral</td>
+          <td>Light gloves for early starts</td>
+        </tr>
+        <tr>
+          <td>8–15°</td>
+          <td>Long sleeve, light tights or shorts</td>
+          <td>Old hoodie or jacket</td>
+          <td>Gloves, ear band</td>
+        </tr>
+        <tr>
+          <td>Below 8°</td>
+          <td>Thermal base layer, tights, gloves</td>
+          <td>Bin bag or heavy old layer</td>
+          <td>Hand warmers, buff</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="mistakes">
+  <div class="wrap">
+    <p class="eyebrow">LEARNED THE HARD WAY</p>
+    <h2 class="display head">Common race-day outfit mistakes</h2>
+    <p class="lede">Nearly all of these come from testing something for the first time on race morning instead of in training.</p>
+
+    <div class="mistake-row">
+      <div class="mistake-col dont">
+        <h4 class="display">Skip this</h4>
+        <ul>
+          <li>Wearing brand-new shoes for the first time on race day</li>
+          <li>Dressing for how the start corral feels, not the whole race</li>
+          <li>Cotton anything — it stays wet and heavy once it's soaked</li>
+          <li>New socks straight out of the packet, unwashed</li>
+          <li>Forgetting a hat or cap when the forecast says sun</li>
+        </ul>
+      </div>
+      <div class="mistake-col do">
+        <h4 class="display">Do this instead</h4>
+        <ul>
+          <li>Run at least one long training session in full race kit</li>
+          <li>Dress about 10° warmer than the corral actually feels</li>
+          <li>Pick synthetic or merino fabric, tested on a prior run</li>
+          <li>Wear socks that have already survived a wash cycle</li>
+          <li>Pack layers you can remove, not just ones you can add</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="perf"></div>
+
+<section id="checklist" style="background:var(--paper2);">
+  <div class="wrap">
+    <p class="eyebrow">PACK THIS THE NIGHT BEFORE</p>
+    <h2 class="display head">The change-bag checklist</h2>
+    <p class="lede">Everything waiting for you at the finish line, so the crash after the race is short and dry.</p>
+
+    <div class="checklist">
+      <div class="chk"><div class="box"></div><p>Dry top and bottoms<span>Something that isn't your sweat-soaked race kit</span></p></div>
+      <div class="chk"><div class="box"></div><p>Warm outer layer<span>Body temperature drops fast once you stop moving</span></p></div>
+      <div class="chk"><div class="box"></div><p>Fresh socks<span>Wet feet in the same socks invite blisters after</span></p></div>
+      <div class="chk"><div class="box"></div><p>A second pair of shoes<span>Race shoes get uncomfortable fast once you're walking, not running</span></p></div>
+      <div class="chk"><div class="box"></div><p>Small towel<span>For sweat, rain, or a quick wipe-down before changing</span></p></div>
+      <div class="chk"><div class="box"></div><p>Snacks and electrolytes<span>Appetite often returns before you expect it to</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta-inner">
+    <div>
+      <h2 class="display head">Race morning, sorted</h2>
+      <p>Save this as a reference for the week before your next race — no email required, no sign-up.</p>
+    </div>
+    <div class="btns">
+      <button class="solid" onclick="window.print()">Print this guide</button>
+      <button onclick="navigator.share ? navigator.share({title:document.title, url:location.href}) : alert('Copy the page link to share.')">Share the link</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="foot-mark">Race Morning Guide</div>
+      <span>An independent guide for first-time and returning racers. Not a store, not a sponsor.</span>
+      <span>Photography via Unsplash contributors.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
